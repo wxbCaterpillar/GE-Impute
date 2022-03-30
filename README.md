@@ -1,12 +1,21 @@
 # GE-Impute
+
 GE-Impute is an imputation method for scRNA-seq data based on graph embeddings.
+
+## Requirements
+
+networkx
+
+Word2Vec
 
 ## Installation
 setup
 
 ## Tutorial
 
-from CellImputation import GEImpute
+```
+from CellImputation import GEImpute 
+
 import pandas as pd
 
 rawfile=pd.read_csv("/home/wuxiaobin/imputation/data/Result1_PearsonCor/mask0_seed0_10x.txt",sep="\t",index_col=0)
@@ -19,4 +28,4 @@ cell_emb=GEImpute.trainCellEmbeddings(graph_adj)
 
 #step3 scRNA-seq data imputation
 data_imp=GEImpute.imputation(scfile=rawfile,embeddingfile=cell_emb,AdjGraph=graph_adj)
-
+```
