@@ -20,16 +20,16 @@ python setup.py install
 ```
 import pandas as pd
 
-from SCIMP import Impute 
+import SCIMP.Impute
 
-rawfile=pd.read_csv("/home/wuxiaobin/imputation/data/Result1_PearsonCor/mask0_seed0_10x.txt",sep="\t",index_col=0)
+rawfile=pd.read_csv("/home/wuxiaobin/imputation/data/Result1_PearsonCor/scfile_10x.txt",sep="\t",index_col=0)
 
 #Step1 build adj matrix
-graph_adj=GEImpute.GraphBuild(rawfile)
+graph_adj=Impute.GraphBuild(rawfile)
 
 #Step2 cell embeddings
-cell_emb=GEImpute.trainCellEmbeddings(graph_adj)
+cell_emb=Impute.trainCellEmbeddings(graph_adj)
 
 #Step3 scRNA-seq data imputation
-data_imp=GEImpute.imputation(scfile=rawfile,embeddingfile=cell_emb,AdjGraph=graph_adj)
+data_imp=Impute.imputation(scfile=rawfile,embeddingfile=cell_emb,AdjGraph=graph_adj)
 ```
