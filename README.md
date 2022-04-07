@@ -9,14 +9,18 @@ Overall workflow of GE-Impute algorithm pipeline
 GE-Impute constructs a cell-cell similarity network based on Euclidean distance. For each cell, it simulates a random walk of fixed length using BFS and DFS fashion. Next, skip-gram model was employed to train the embedding matrix for each cell basing on sampling walks. New links were predicted to reconstruct the similarity network by calculating the distance of cells’ embeddings in the latent space. Finally, GE-Impute imputes the drop-out events for each cell by averaging the expression value of all neighbors in network.
 
 ## Installation
-setup
+
+#change to SCIMP directory
+```
+python setup.py install
+```
 
 ## Tutorial
 
 ```
 import pandas as pd
 
-from CellImputation import GEImpute 
+from SCIMP import Impute 
 
 rawfile=pd.read_csv("/home/wuxiaobin/imputation/data/Result1_PearsonCor/mask0_seed0_10x.txt",sep="\t",index_col=0)
 
