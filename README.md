@@ -14,9 +14,9 @@ setup
 ## Tutorial
 
 ```
-from CellImputation import GEImpute 
-
 import pandas as pd
+
+from CellImputation import GEImpute 
 
 rawfile=pd.read_csv("/home/wuxiaobin/imputation/data/Result1_PearsonCor/mask0_seed0_10x.txt",sep="\t",index_col=0)
 
