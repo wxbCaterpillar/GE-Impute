@@ -2,11 +2,11 @@
 
 GE-Impute is an imputation method for scRNA-seq data based on graph embeddings.
 
-## Requirements
+Overall workflow of GE-Impute algorithm pipeline
 
-networkx
+<img width="415" alt="image" src="https://user-images.githubusercontent.com/44340233/162195520-e8b84b86-0efe-4fb2-b6ac-786c8a04496f.png">
 
-Word2Vec
+GE-Impute constructs a cell-cell similarity network based on Euclidean distance. For each cell, it simulates a random walk of fixed length using BFS and DFS fashion. Next, skip-gram model was employed to train the embedding matrix for each cell basing on sampling walks. New links were predicted to reconstruct the similarity network by calculating the distance of cells’ embeddings in the latent space. Finally, GE-Impute imputes the drop-out events for each cell by averaging the expression value of all neighbors in network.
 
 ## Installation
 setup
