@@ -22,7 +22,7 @@ import pandas as pd
 
 import SCIMP.Impute
 
-rawfile=pd.read_csv("/home/wuxiaobin/imputation/data/Result1_PearsonCor/scfile_10x.txt",sep="\t",index_col=0)
+rawfile=pd.read_csv("input_file.txt",sep="\t",index_col=0)
 
 #Step1 build adj matrix
 graph_adj=Impute.GraphBuild(rawfile)
