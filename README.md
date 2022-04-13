@@ -15,7 +15,7 @@ GE-Impute constructs a raw cell-cell similarity network based on Euclidean dista
 python setup.py install
 ```
 ## Requirements
-- python = 3.6
+- python = 3.8
 - sklearn
 - networkx
 - gensim
