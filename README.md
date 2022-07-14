@@ -32,9 +32,9 @@ rawfile=pd.read_csv("input_file.txt",sep="\t",index_col=0)
 #Step2 build adjacent matrix for scRNA-seq data.
 graph_adj=Impute.GraphBuild(rawfile)
 
-#Step2 learn cell embeddings.
+#Step3 learn cell embeddings.
 cell_emb=Impute.trainCellEmbeddings(graph_adj)
 
-#Step3 scRNA-seq data imputation, the format of output file is genes x cells expression matrix.
+#Step4 scRNA-seq data imputation, the format of output file is genes x cells expression matrix.
 data_imp=Impute.imputation(scfile=rawfile,embeddingfile=cell_emb,AdjGraph=graph_adj)
 ```
