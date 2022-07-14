@@ -20,11 +20,11 @@ GE-Impute constructs a raw cell-cell similarity network based on Euclidean dista
 ## Tutorial
 
 ```
-#change directory to code
+#change directory to src
+
+from SCIMP import Impute
 
 import pandas as pd
-
-import SCIMP
 
 #Step1 load the raw count matrix of scRNA-seq data, where rows are genes and columns are cells.
 rawfile=pd.read_csv("input_file.txt",sep="\t",index_col=0)
