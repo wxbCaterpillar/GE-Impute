@@ -8,12 +8,6 @@ Overall workflow of GE-Impute algorithm pipeline
 
 GE-Impute constructs a raw cell-cell similarity network based on Euclidean distance. For each cell, it simulates a random walk of fixed length using BFS and DFS strategy. Next, graph embedding-based neural network model was employed to train the embedding matrix for each cell based on sampling walks. The similarity among cells could be re-calculated from embedding matrix to predict new link-neighbors for the cells and reconstruct cell-cell similarity network. Finally, GE-Impute imputes the dropout zeros for each cell by averaging the expression value of its neighbors in reconstructed similarity network.
 
-## Installation
-
-#change to SCIMP directory
-```
-python setup.py install
-```
 ## Requirements
 - python = 3.8
 - sklearn
@@ -26,9 +20,11 @@ python setup.py install
 ## Tutorial
 
 ```
+#change directory to code
+
 import pandas as pd
 
-import SCIMP.Impute
+import SCIMP
 
 #Step1 load the raw count matrix of scRNA-seq data, where rows are genes and columns are cells.
 rawfile=pd.read_csv("input_file.txt",sep="\t",index_col=0)
